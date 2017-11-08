@@ -5,7 +5,7 @@
                 <h1 class="brand">Headline News</h1>
                 <nav class="inner">
                     <a href="https://newsapi.org/" target="_blank" rel="noopener">News API</a>
-                    <a href="https://github.com/iamfunsho" target="_blank" rel="noopener">Github Repo</a>
+                    <a href="https://github.com/iamfunsho/vue-ssr-example" target="_blank" rel="noopener">Github Repo</a>
                     <a href="https://ssr.vuejs.org" target="_blank" rel="noopener">Vue.JS SSR</a>
                 </nav>
             </div>
