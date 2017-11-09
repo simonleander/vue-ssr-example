@@ -8,6 +8,11 @@ module.exports = merge(baseConfig, {
 	entry: {
 		app: './src/entry-client.js'
 	},
+	resolve: {
+		alias: {
+			'axios-client': './api-client.js'
+		}
+	},
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {

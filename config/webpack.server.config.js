@@ -7,6 +7,11 @@ module.exports = merge(baseConfig, {
 	entry: './src/entry-server.js',
 	target: 'node',
 	devtool: 'source-map',
+	resolve: {
+		alias: {
+			'axios-client': './api-server.js'
+		}
+	},
 	output: {
 		filename: 'server-bundle.js',
 		libraryTarget: 'commonjs2'
