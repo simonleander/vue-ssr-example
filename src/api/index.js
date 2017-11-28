@@ -9,15 +9,23 @@ if(client.server){
 
 function cacheSources(){
 	fetchSources();
-	setTimeout(fetchSources, 1000 * 60 * 10)
+	setTimeout(cacheSources, 1000 * 60 * 10)
 }
 
-function fetch(url, params){
+function fetch(url, params = null){
 	
 	const cache = client.cachedItems;
 	
-	if(cache && cache.has(url)){
-		return Promise.resolve(cache.get(url));
+	let key;
+	
+	if(params) {
+		key = url + '_' + params.source;
+	}else {
+		key = url;
+	}
+	
+	if(cache && cache.has(key)){
+		return Promise.resolve(cache.get(key));
 	}else {
 		return new Promise((resolve, reject) => {
 			client.get(url, {
@@ -25,7 +33,7 @@ function fetch(url, params){
 			}).then((res) => {
 				
 				if(res.data.status === "ok"){
-					cache && cache.set(url, res.data);
+					cache && cache.set(key, res.data);
 					resolve(res.data);
 				}else{
 					reject("News API error: " + res.data.message);
@@ -36,7 +44,6 @@ function fetch(url, params){
 			})
 		});
 	}
-	
 }
 
 export function fetchSources() {

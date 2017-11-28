@@ -10,7 +10,7 @@ module.exports = merge(baseConfig, {
 	},
 	resolve: {
 		alias: {
-			'axios-client': './api-client.js'
+			'axios-client': './axios-client.js'
 		}
 	},
 	plugins: [

@@ -9,7 +9,7 @@ module.exports = merge(baseConfig, {
 	devtool: 'source-map',
 	resolve: {
 		alias: {
-			'axios-client': './api-server.js'
+			'axios-client': './axios-server.js'
 		}
 	},
 	output: {
